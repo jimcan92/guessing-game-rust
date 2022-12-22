@@ -4,7 +4,7 @@ This game uses [rand](https://crates.io/crates/rand) to generate random number.
 
 Complete code:
 
-rust```
+```rust
 use std::cmp::Ordering;
 use std::io::{stdin, stdout, Write};
 use std::ops::Range;
