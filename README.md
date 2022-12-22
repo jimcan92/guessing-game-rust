@@ -4,7 +4,7 @@ This game uses [rand](https://crates.io/crates/rand) to generate random number.
 
 Complete code:
 
-```
+rust```
 use std::cmp::Ordering;
 use std::io::{stdin, stdout, Write};
 use std::ops::Range;
@@ -12,28 +12,28 @@ use std::ops::Range;
 use rand::{Rng, thread_rng};
 
 fn input(prompt: &str) -> String {
-let mut buff = String::new();
-print!("{prompt}");
-stdout().flush().expect("Error in flushing prompt!");
-stdin().read_line(&mut buff).expect("Error reading input!");
-buff.trim().to_string()
+    let mut buff = String::new();
+    print!("{prompt}");
+    stdout().flush().expect("Error in flushing prompt!");
+    stdin().read_line(&mut buff).expect("Error reading input!");
+    buff.trim().to_string()
 }
 
 fn get_number(prompt: &str) -> Option<isize> {
-let r = input(prompt);
-let Some(i) = r.parse().ok() else {
-return None;
-};
-Some(i)
+    let r = input(prompt);
+    let Some(i) = r.parse().ok() else {
+        return None;
+    };
+    Some(i)
 }
 
 fn get_random_number(k: Range<u8>) -> u8 {
-let mut tr = thread_rng();
-tr.gen_range(k)
+    let mut tr = thread_rng();
+    tr.gen_range(k)
 }
 
 fn main() {
-let mut guess_limit = 10;
+    let mut guess_limit = 10;
 
     println!("=============================================");
     println!("|\t\t\tGuess the number game\t\t\t|");
